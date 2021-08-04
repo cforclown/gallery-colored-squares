@@ -1,0 +1,71 @@
+#main-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#main-container-header {
+    height: 48px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0 0.8rem;
+
+    border-bottom: 1px solid #4b4b4b;
+
+    .input-color-form {
+        font-weight: bold;
+        font-family: "Roboto";
+    }
+
+    form > label > input {
+        width: 100px;
+        margin: 0 1rem 0 0.6rem;
+    }
+}
+
+#main-container-content {
+    padding: 0 0 4rem 0;
+}
+
+#squares-filter-container {
+    height: 48px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-bottom: 1px solid #4b4b4b;
+}
+
+#squares-container {
+    padding: 0.8rem 0 1rem 0.8rem;
+    margin: 0 0 4rem 0;
+    height: calc(100vh - 128px);
+    overflow-y: auto;
+
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 19% 19% 19% 19% 19%;
+    grid-gap: 1rem 0.8rem;
+    justify-items: center;
+
+    @media screen and (max-width: 960px) {
+        grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+    }
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 31.5% 31.5% 31.5%;
+    }
+    @media screen and (max-width: 576px) {
+        grid-template-columns: 47% 47%;
+    }
+    @media screen and (max-width: 384px) {
+        grid-template-columns: 96%;
+        grid-gap: 1rem 0;
+    }
+}
