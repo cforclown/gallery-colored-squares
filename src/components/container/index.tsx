@@ -162,7 +162,7 @@ const Container: React.FC<{
         const rgb = hexToRgb(hexColor);
         if (!rgb) return null;
 
-        // Then to HSL
+        // RGB to HSL
         rgb.r /= 255;
         rgb.g /= 255;
         rgb.b /= 255;
@@ -173,9 +173,9 @@ const Container: React.FC<{
             s = 0,
             l = 0;
 
-        if (delta == 0) h = 0;
-        else if (cmax == rgb.r) h = ((rgb.g - rgb.b) / delta) % 6;
-        else if (cmax == rgb.g) h = (rgb.b - rgb.r) / delta + 2;
+        if (delta === 0) h = 0;
+        else if (cmax === rgb.r) h = ((rgb.g - rgb.b) / delta) % 6;
+        else if (cmax === rgb.g) h = (rgb.b - rgb.r) / delta + 2;
         else h = (rgb.r - rgb.g) / delta + 4;
 
         h = Math.round(h * 60);
@@ -183,7 +183,7 @@ const Container: React.FC<{
         if (h < 0) h += 360;
 
         l = (cmax + cmin) / 2;
-        s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+        s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
         s = +(s * 100).toFixed(1);
         l = +(l * 100).toFixed(1);
 
